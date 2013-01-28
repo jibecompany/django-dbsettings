@@ -3,7 +3,6 @@ from decimal import Decimal
 from hashlib import md5
 from os.path import join as pjoin
 import time
-from PIL import Image
 
 from django import forms
 from django.conf import settings
@@ -252,6 +251,9 @@ class ImageValue(Value):
             "Widget with preview"
 
             def render(self, name, value, attrs=None):
+                # This will crash if PIL is not installed
+                from PIL import Image
+
                 output = []
 
                 try:
