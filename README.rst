@@ -40,11 +40,15 @@ In order to setup database storage, and to let Django know about your use of
         ...
     )
 
-URL Configuration
------------------
+URL Configuration (optional)
+----------------------------
 
-In order to edit your settings at run-time, you'll need to configure a URL to
-access the provided editors. You'll just need to add a single line, defining
+The settings will automatically appear in the Django admin, you no longer need
+to change your URL configuration.
+
+If you want to have it available under a different url, or prefer to not
+use the Django admin, you can manually add ``dbsettings`` to your url config.
+You'll just need to add a single line, defining
 the base URL for the editors, as ``dbsettings`` has its own URLconf to handle
 the rest. You may choose any location you like::
 
